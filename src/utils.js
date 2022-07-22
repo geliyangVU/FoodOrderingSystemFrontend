@@ -42,3 +42,14 @@ return fetch(`/restaurant/${restId}/menu`).then((response) => {
     return response.json();
 });
 };
+
+
+export const getRestaurants = () => {
+    return fetch("/restaurants").then((response) => {
+      if (response.status < 200 || response.status >= 300) {
+        throw Error("Fail to get restaurants");
+      }
+  
+      return response.json();
+    });
+  };
