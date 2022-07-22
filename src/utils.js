@@ -67,7 +67,14 @@ return fetch("/cart").then((response) => {
 
 
 
-
+export const checkout = () => {
+    return fetch("/checkout").then((response) => {
+      if (response.status < 200 || response.status >= 300) {
+        throw Error("Fail to checkout");
+      }
+    });
+  };
+  
 
 
 
