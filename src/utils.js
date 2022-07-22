@@ -15,18 +15,30 @@ export const login = (credential) => {
   };
   
 
-  export const signup = (data) => {
-    const signupUrl = "/signup";
-  
-    return fetch(signupUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then((response) => {
-      if (response.status < 200 || response.status >= 300) {
-        throw Error("Fail to sign up");
-      }
-    });
-  };
+export const signup = (data) => {
+const signupUrl = "/signup";
+
+return fetch(signupUrl, {
+    method: "POST",
+    headers: {
+    "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+}).then((response) => {
+    if (response.status < 200 || response.status >= 300) {
+    throw Error("Fail to sign up");
+    }
+});
+};
+
+
+
+export const getMenus = (restId) => {
+return fetch(`/restaurant/${restId}/menu`).then((response) => {
+    if (response.status < 200 || response.status >= 300) {
+    throw Error("Fail to get menus");
+    }
+
+    return response.json();
+});
+};
