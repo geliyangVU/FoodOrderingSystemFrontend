@@ -18,9 +18,9 @@ function App() {
             level={2}
             style={{ color: "white", lineHeight: "inherit", marginBottom: 0 }}
           >
-            Lai Food
+            L Food
           </Title>
-          <div>{authed ? "MyCart Placeholder" : <SignupForm />}</div>
+          <div>{authed ? <MyCart /> : <SignupForm />}</div>
         </div>
       </Header>
       <Content
@@ -31,7 +31,7 @@ function App() {
         }}
       >
         {authed ? (
-          <div>content placeholder</div>
+          <FoodList />
         ) : (
           <LoginForm onSuccess={() => setAuthed(true)} />
         )}
