@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+import logo from "./logo.svg";
 import { Layout } from "antd";
-import LoginForm from "./components/LoginForm"
+import LoginForm from "./components/LoginForm";
 const { Header, Content } = Layout;
 
 function App() {
