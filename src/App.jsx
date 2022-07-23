@@ -4,6 +4,8 @@ import { useState } from "react";
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import Title from "antd/lib/skeleton/Title";
+import MyCart from "./components/MyCart";
+import FoodList from "./components/FoodList";
 
 const { Header, Content } = Layout;
 
